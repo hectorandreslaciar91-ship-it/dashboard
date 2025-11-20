@@ -4,6 +4,9 @@
   background-color: var(--bg-secondary);
   transition: background-color 0.3s ease;
   position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .sidebar-overlay {
@@ -30,6 +33,9 @@
   margin-left: 0;
   transition: margin-left 0.3s ease;
   width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  min-width: 0;
 }
 
 .app-main.sidebar-collapsed {
