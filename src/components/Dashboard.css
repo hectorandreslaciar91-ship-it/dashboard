@@ -1,0 +1,30 @@
+.dashboard {
+  flex: 1;
+  padding: 32px;
+  overflow-y: auto;
+}
+
+.dashboard-header {
+  margin-bottom: 32px;
+}
+
+.dashboard-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.dashboard-subtitle {
+  font-size: 16px;
+  color: var(--text-tertiary);
+}
+
+.dashboard-content {
+  margin-top: 24px;
+}
+
+.dashboard-main {
+  width: 100%;
+}
+
