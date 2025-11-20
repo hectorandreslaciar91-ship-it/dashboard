@@ -3,14 +3,14 @@ import { Search, Mail, Bell, User, Menu, Sun, Moon } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
 import './Header.css'
 
-const Header = ({ onToggleSidebar, sidebarCollapsed }) => {
+const Header = ({ onToggleSidebar, sidebarCollapsed, isMobile, sidebarOpen }) => {
   const { theme, toggleTheme } = useTheme()
 
   return (
     <header className="header">
       <div className="header-left">
-        {sidebarCollapsed && onToggleSidebar && (
-          <button className="menu-toggle-btn" onClick={onToggleSidebar}>
+        {(isMobile || sidebarCollapsed) && onToggleSidebar && (
+          <button className="menu-toggle-btn" onClick={onToggleSidebar} aria-label="Toggle menu">
             <Menu size={20} />
           </button>
         )}

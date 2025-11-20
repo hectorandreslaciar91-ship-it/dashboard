@@ -7,28 +7,52 @@
 }
 
 .case-table-header {
-  padding: 20px 24px;
+  padding: 16px;
   border-bottom: 1px solid var(--border-color);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 12px;
   transition: border-color 0.3s ease;
 }
 
+@media (min-width: 768px) {
+  .case-table-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    gap: 0;
+  }
+}
+
 .case-table-header h2 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--text-primary);
   transition: color 0.3s ease;
 }
 
+@media (min-width: 768px) {
+  .case-table-header h2 {
+    font-size: 18px;
+  }
+}
+
 .case-table-filters {
   display: flex;
-  gap: 12px;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .case-table-filters {
+    gap: 12px;
+    flex-wrap: nowrap;
+  }
 }
 
 .filter-select {
-  padding: 8px 12px;
+  padding: 10px 12px;
   border: 1px solid var(--border-color);
   border-radius: 6px;
   font-size: 14px;
@@ -36,6 +60,17 @@
   color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.2s;
+  min-height: 44px;
+  flex: 1;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .filter-select {
+    padding: 8px 12px;
+    flex: 0;
+    min-width: auto;
+  }
 }
 
 .filter-select:hover {
@@ -54,14 +89,28 @@
 
 .case-table-wrapper {
   overflow-x: auto;
-  max-height: 600px;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: calc(100vh - 300px);
+}
+
+@media (min-width: 768px) {
+  .case-table-wrapper {
+    max-height: 600px;
+  }
 }
 
 .case-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 14px;
+  font-size: 12px;
+  min-width: 800px;
+}
+
+@media (min-width: 768px) {
+  .case-table {
+    font-size: 14px;
+  }
 }
 
 .case-table thead {
@@ -73,16 +122,23 @@
 }
 
 .case-table th {
-  padding: 12px 16px;
+  padding: 10px 12px;
   text-align: left;
   font-weight: 600;
   color: var(--text-secondary);
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   border-bottom: 2px solid var(--border-color);
   white-space: nowrap;
   transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .case-table th {
+    padding: 12px 16px;
+    font-size: 12px;
+  }
 }
 
 .case-table th.sortable {
@@ -103,11 +159,17 @@
 }
 
 .case-table td {
-  padding: 16px;
+  padding: 12px;
   border-bottom: 1px solid var(--border-light);
   color: var(--text-secondary);
   white-space: nowrap;
   transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .case-table td {
+    padding: 16px;
+  }
 }
 
 .case-table tbody tr {

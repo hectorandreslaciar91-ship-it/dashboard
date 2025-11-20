@@ -4,18 +4,33 @@
 
 .quick-lookup-header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: stretch;
   margin-bottom: 16px;
-  gap: 20px;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .quick-lookup-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
 }
 
 .quick-lookup-title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--text-primary);
   margin: 0;
   transition: color 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .quick-lookup-title {
+    font-size: 18px;
+  }
 }
 
 .quick-lookup-search {
@@ -27,8 +42,14 @@
   border-radius: 8px;
   padding: 10px 16px;
   flex: 1;
-  max-width: 400px;
+  width: 100%;
   transition: all 0.2s;
+}
+
+@media (min-width: 768px) {
+  .quick-lookup-search {
+    max-width: 400px;
+  }
 }
 
 .quick-lookup-search:focus-within {
@@ -73,8 +94,21 @@
 
 .quick-lookup-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 480px) {
+  .quick-lookup-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .quick-lookup-cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
 }
 
 .quick-lookup-card {
@@ -82,8 +116,14 @@
   border: 1px solid var(--border-color);
   border-left: 4px solid;
   border-radius: 8px;
-  padding: 20px;
+  padding: 16px;
   transition: all 0.2s, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .quick-lookup-card {
+    padding: 20px;
+  }
 }
 
 .quick-lookup-card:hover {
@@ -112,7 +152,7 @@
 }
 
 .quick-lookup-value {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 700;
   color: var(--text-primary);
   line-height: 1;
@@ -120,23 +160,35 @@
   transition: color 0.3s ease;
 }
 
+@media (min-width: 768px) {
+  .quick-lookup-value {
+    font-size: 32px;
+  }
+}
+
 .quick-lookup-title-text {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--text-secondary);
   margin-bottom: 4px;
   transition: color 0.3s ease;
 }
 
+@media (min-width: 768px) {
+  .quick-lookup-title-text {
+    font-size: 14px;
+  }
+}
+
 .quick-lookup-subtitle {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--text-tertiary);
   transition: color 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .quick-lookup-cards {
-    grid-template-columns: 1fr;
+@media (min-width: 768px) {
+  .quick-lookup-subtitle {
+    font-size: 12px;
   }
 }
 

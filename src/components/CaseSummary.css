@@ -10,7 +10,13 @@
   justify-content: center;
   z-index: 2000;
   animation: fadeIn 0.2s ease;
-  padding: 20px;
+  padding: 16px;
+}
+
+@media (min-width: 768px) {
+  .case-summary-modal-overlay {
+    padding: 20px;
+  }
 }
 
 @keyframes fadeIn {
@@ -23,7 +29,7 @@
 }
 
 .case-summary-modal {
-  width: 500px;
+  width: 100%;
   max-width: 90vw;
   max-height: 90vh;
   background-color: var(--bg-primary);
@@ -35,6 +41,14 @@
   animation: scaleIn 0.3s ease;
   box-shadow: 0 20px 25px -5px var(--shadow-dark), 0 10px 10px -5px var(--shadow);
   transition: background-color 0.3s ease, border-color 0.3s ease;
+  margin: 0 16px;
+}
+
+@media (min-width: 768px) {
+  .case-summary-modal {
+    width: 500px;
+    margin: 0;
+  }
 }
 
 @keyframes scaleIn {

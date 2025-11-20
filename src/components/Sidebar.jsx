@@ -2,9 +2,9 @@ import React from 'react'
 import { LayoutDashboard, CheckSquare, Calendar, BarChart3, Users, Settings, HelpCircle, LogOut, Menu, X } from 'lucide-react'
 import './Sidebar.css'
 
-const Sidebar = ({ collapsed, onToggle }) => {
+const Sidebar = ({ collapsed, open, onToggle, onClose }) => {
   return (
-    <div className={`sidebar ${collapsed ? 'collapsed' : ''}`}>
+    <div className={`sidebar ${collapsed ? 'collapsed' : ''} ${open ? 'open' : ''}`}>
       <div className="sidebar-header">
         <div className="logo">
           <div className="logo-icon">D</div>
@@ -58,7 +58,18 @@ const Sidebar = ({ collapsed, onToggle }) => {
         </div>
       </nav>
 
-      
+      {!collapsed && (
+        <div className="sidebar-footer">
+          <div className="mobile-app-card">
+            <div className="mobile-app-header">
+              <div className="mobile-app-icon">📱</div>
+              <h3>Download our Mobile App</h3>
+            </div>
+            <p>Get easy in another way</p>
+            <button className="download-btn">Download</button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

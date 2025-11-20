@@ -1,23 +1,47 @@
 .dashboard {
   flex: 1;
-  padding: 32px;
+  padding: 16px;
   overflow-y: auto;
 }
 
+@media (min-width: 768px) {
+  .dashboard {
+    padding: 32px;
+  }
+}
+
 .dashboard-header {
-  margin-bottom: 32px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .dashboard-header {
+    margin-bottom: 32px;
+  }
 }
 
 .dashboard-header h1 {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 8px;
 }
 
+@media (min-width: 768px) {
+  .dashboard-header h1 {
+    font-size: 32px;
+  }
+}
+
 .dashboard-subtitle {
-  font-size: 16px;
+  font-size: 14px;
   color: var(--text-tertiary);
+}
+
+@media (min-width: 768px) {
+  .dashboard-subtitle {
+    font-size: 16px;
+  }
 }
 
 .dashboard-content {
